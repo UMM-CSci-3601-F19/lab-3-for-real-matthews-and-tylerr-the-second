@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { todos } from './todos';
+import { Todos } from './todos';
 import {HttpClient} from '@angular/common/http';
 
 @Injectable({
