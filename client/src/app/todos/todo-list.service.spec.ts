@@ -1,12 +1,12 @@
 import { TestBed } from '@angular/core/testing';
 
-import { TodosListService } from './todos-list.service';
+import { TodoListService } from './todo-list.service';
 
-describe('TodosListService', () => {
+describe('TodoListService', () => {
   beforeEach(() => TestBed.configureTestingModule({}));
 
   it('should be created', () => {
-    const service: TodosListService = TestBed.get(TodosListService);
+    const service: TodoListService = TestBed.get(TodoListService);
     expect(service).toBeTruthy();
   });
 });

@@ -1,4 +1,4 @@
-export interface Todos {
+export interface Todo {
   _id: String;
   Owner: String;
   Status: Boolean;
