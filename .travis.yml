@@ -14,7 +14,7 @@ addons:
 before_script:
     - "sudo chown root /opt/google/chrome/chrome-sandbox"
     - "sudo chmod 4755 /opt/google/chrome/chrome-sandbox"
-    - "nvm install --Its"
+    - "nvm install --lts"
     - "npm install -g@angular/cli"
 jdk:
   - openjdk8
