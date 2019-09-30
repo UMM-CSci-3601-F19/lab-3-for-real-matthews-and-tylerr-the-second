@@ -23,7 +23,7 @@ export class TodoListService {
 
     let filteredTodos = todos;
 
-    // Filter by name
+    // Filter by Owner
     if (searchOwner != null) {
       searchOwner = searchOwner.toLowerCase();
 
@@ -32,7 +32,7 @@ export class TodoListService {
       });
     }
 
-    // Filter by age
+    // Filter by Status
     if (searchStatus != null) {
       filteredTodos = filteredTodos.filter((todo: Todo) => {
         return !searchStatus || (todo.Status === Boolean(searchStatus));

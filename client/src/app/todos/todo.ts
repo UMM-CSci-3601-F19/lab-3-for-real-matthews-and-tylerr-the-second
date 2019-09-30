@@ -1,7 +1,7 @@
 export interface Todo {
-  _id: String;
-  Owner: String;
-  Status: Boolean;
-  Body: String;
-  Category: String;
+  _id: string;
+  Owner: string;
+  Status: boolean;
+  Body: string;
+  Category: string;
 }
