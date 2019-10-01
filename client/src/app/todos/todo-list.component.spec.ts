@@ -23,24 +23,24 @@ describe('Todo List', () => {
       getTodos: () => of([
         {
           _id: 'chris_id',
-          Owner: 'Chris',
-          Status: true,
-          Body: 'lots of random latin',
-          Category: 'computer science'
+          owner: 'Chris',
+          status: true,
+          body: 'lots of random latin',
+          category: 'computer science'
         },
         {
           _id: 'pat_id',
-          Owner: 'Pat',
-          Status: false,
-          Body : 'In',
-          Category: 'Software Design'
+          owner: 'Pat',
+          status: false,
+          body : 'In',
+          category: 'Software Design'
         },
         {
           _id: 'jamie_id',
-          Owner: 'Jamie',
-          Status: false,
-          Body: 'non',
-          Category: 'Video Games'
+          owner: 'Jamie',
+          status: false,
+          body: 'non',
+          category: 'Video Games'
         }
       ])
     };
@@ -66,19 +66,19 @@ describe('Todo List', () => {
   });
 
   it('contains a owner named \'Chris\'', () => {
-    expect(todoList.todos.some((todo: Todo) => todo.Owner === 'Chris')).toBe(true);
+    expect(todoList.todos.some((todo: Todo) => todo.owner === 'Chris')).toBe(true);
   });
 
   it('contain a owner named \'Jamie\'', () => {
-    expect(todoList.todos.some((todo: Todo) => todo.Owner === 'Jamie')).toBe(true);
+    expect(todoList.todos.some((todo: Todo) => todo.owner === 'Jamie')).toBe(true);
   });
 
   it('doesn\'t contain a owner named \'Santa\'', () => {
-    expect(todoList.todos.some((todo: Todo) => todo.Owner === 'Santa')).toBe(false);
+    expect(todoList.todos.some((todo: Todo) => todo.owner === 'Santa')).toBe(false);
   });
 
   it('has two users that are false status', () => {
-    expect(todoList.todos.filter((todo: Todo) => todo.Status === false).length).toBe(2);
+    expect(todoList.todos.filter((todo: Todo) => todo.status === false).length).toBe(2);
   });
 });
 

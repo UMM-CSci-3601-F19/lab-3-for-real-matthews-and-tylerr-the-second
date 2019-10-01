@@ -1,9 +1,10 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
-import { TodoComponent } from './todo.component';
 import { Todo } from './todo';
-import {Observable, of} from 'rxjs';
+import { TodoComponent } from './todo.component';
 import {TodoListService} from '../todos/todo-list.service';
+import {Observable} from 'rxjs';
+import { of } from 'rxjs';
+
 
 
 describe('TodoComponent', () => {
@@ -20,24 +21,24 @@ describe('TodoComponent', () => {
       getTodoById: (todoId: string) => of([
         {
           _id: 'chris_id',
-          Owner: 'Chris',
-          Status: true,
-          Body: 'lots of random latin',
-          Category: 'computer science'
+          owner: 'Chris',
+          status: true,
+          body: 'lots of random latin',
+          category: 'computer science'
         },
         {
           _id: 'pat_id',
-          Owner: 'Pat',
-          Status: false,
-          Body : 'In',
-          Category: 'Software Design'
+          owner: 'Pat',
+          status: false,
+          body : 'In',
+          category: 'Software Design'
         },
         {
           _id: 'jamie_id',
-          Owner: 'Jamie',
-          Status: false,
-          Body: 'non',
-          Category: 'Video Games'
+          owner: 'Jamie',
+          status: false,
+          body: 'non',
+          category: 'Video Games'
         }
       ].find(todo => todo._id === todoId))
     };
@@ -49,17 +50,17 @@ describe('TodoComponent', () => {
     .compileComponents();
   });
 
-  beforeEach(() => {
+  beforeEach(async(() => {
     fixture = TestBed.createComponent(TodoComponent);
     todoComponent = fixture.componentInstance;
     fixture.detectChanges();
-  });
+  }));
 
   it('can retrieve Pat by ID', () => {
     todoComponent.setId('pat_id');
     expect(todoComponent.Todo).toBeDefined();
-    expect(todoComponent.Todo.Owner).toBe('Pat');
-    expect(todoComponent.Todo.Status).toBe(false);
+    expect(todoComponent.Todo.owner).toBe('Pat');
+    expect(todoComponent.Todo.status).toBe(false);
   });
 
   it('returns undefined for Santa', () => {

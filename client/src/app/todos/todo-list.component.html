@@ -13,9 +13,9 @@
         </mat-form-field>
         <mat-form-field>
           <input
+            matTooltip="complete/incomplete"
             matInput
             id="todoStatus"
-            type="text"
             placeholder="Filter by status"
             (input)="updateStatus($event.target.value)">
         </mat-form-field>
@@ -27,14 +27,14 @@
         </mat-form-field>
 
         <mat-accordion *ngIf="todos; else todosError">
-          <mat-expansion-panel #elem [id]="todo.Category" *ngFor="let todo of this.filteredTodos">
+          <mat-expansion-panel #elem [id]="todo.category" *ngFor="let todo of this.filteredTodos">
             <mat-expansion-panel-header>
 
-              <mat-panel-title matTooltip="Category {{todo.Category}}">{{todo.Owner}}</mat-panel-title>
+              <mat-panel-title matTooltip="category {{todo.category}}">{{todo.owner}}</mat-panel-title>
 
             </mat-expansion-panel-header>
-            <mat-panel-description>Body: {{todo.Body}}</mat-panel-description>
-            <mat-panel-description>Status: {{todo.Status}} </mat-panel-description>
+            <mat-panel-description>Body: {{todo.body}}</mat-panel-description>
+            <mat-panel-description>Status: {{todo.status}} </mat-panel-description>
 
           </mat-expansion-panel>
         </mat-accordion>

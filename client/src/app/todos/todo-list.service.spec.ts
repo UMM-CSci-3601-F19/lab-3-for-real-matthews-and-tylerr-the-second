@@ -12,24 +12,24 @@ describe('Todo list service: ', () => {
   const testTodos: Todo[] = [
     {
       _id: 'chris_id',
-      Owner: 'Chris',
-      Status: true,
-      Body: 'lots of random latin',
-      Category: 'computer science'
+      owner: 'Chris',
+      status: true,
+      body: 'lots of random latin',
+      category: 'computer science'
     },
     {
       _id: 'pat_id',
-      Owner: 'Pat',
-      Status: false,
-      Body: 'In',
-      Category: 'Software Design'
+      owner: 'Pat',
+      status: false,
+      body: 'In',
+      category: 'Software Design'
     },
     {
       _id: 'jamie_id',
-      Owner: 'Jamie',
-      Status: false,
-      Body: 'non',
-      Category: 'Video Games'
+      owner: 'Jamie',
+      status: false,
+      body: 'non',
+      category: 'Video Games'
     }
   ];
   let todoListService: TodoListService;
@@ -91,7 +91,7 @@ describe('Todo list service: ', () => {
     expect(testTodos.length).toBe(3);
     let todoBody = 'lots';
     expect(todoListService.filterTodos(testTodos, null, null, todoBody).length).toBe(1);
-  })
+  });
 
   it('filterTodos() filters by owner and status', () => {
     expect(testTodos.length).toBe(3);
