@@ -19,7 +19,7 @@ export class TodoListService {
   getTodoById(id: string): Observable<Todo> {
     return this.httpClient.get<Todo>(this.todoUrl + '/' + id);
   }
-  filterTodos(todos: Todo[], searchOwner?: string, searchStatus?: boolean): Todo[] {
+  filterTodos(todos: Todo[], searchOwner?: string, searchStatus?: boolean, searchBody?: string): Todo[] {
 
     let filteredTodos = todos;
 
@@ -33,9 +33,17 @@ export class TodoListService {
     }
 
     // Filter by Status
+    // !searchStatus || removed
     if (searchStatus != null) {
       filteredTodos = filteredTodos.filter((todo: Todo) => {
-        return !searchStatus || (todo.Status === Boolean(searchStatus));
+        return todo.Status === Boolean(searchStatus);
+      });
+    }
+
+    // Filter by Body
+    if (searchBody != null) {
+      filteredTodos = filteredTodos.filter(todo => {
+        return !searchBody || todo.Body.toLowerCase().indexOf(searchBody) !== -1;
       });
     }
 

@@ -78,7 +78,7 @@ describe('Todo list service: ', () => {
   it('filterTodos() filters by owner', () => {
     expect(testTodos.length).toBe(3);
     let userName = 'a';
-    expect(todoListService.filterTodos(testTodos, userName).length).toBe(2);
+    expect(todoListService.filterTodos(testTodos, userName, null).length).toBe(2);
   });
 
   it('filterTodos() filters by status', () => {
@@ -87,11 +87,18 @@ describe('Todo list service: ', () => {
     expect(todoListService.filterTodos(testTodos, null, todoStatus).length).toBe(2);
   });
 
+  it ('filterTodos() filters by body', () => {
+    expect(testTodos.length).toBe(3);
+    let todoBody = 'lots';
+    expect(todoListService.filterTodos(testTodos, null, null, todoBody).length).toBe(1);
+  })
+
   it('filterTodos() filters by owner and status', () => {
     expect(testTodos.length).toBe(3);
     let todoStatus = true;
     let todoOwner = 'Chris';
-    expect(todoListService.filterTodos(testTodos, todoOwner, todoStatus).length).toBe(1);
+    let todoBody = 'lots';
+    expect(todoListService.filterTodos(testTodos, todoOwner, todoStatus, todoBody).length).toBe(1);
   });
 });
 
